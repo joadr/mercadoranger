@@ -1,0 +1,25 @@
+<template name='home'>
+  {{#main}}
+    <div class='navbar'>
+      <img src='MARKETRlogo.png' style = 'height: 40px;' />
+    </div>
+    <div class='content central'>
+      Tu comprador te espera
+      <form>
+        <input type='text' id='id_ml' name='id_ml' placeholder='Tu id de mercadolibre' />
+      </form>
+      <div style = 'width: 600px; margin: 60px auto; font-size: 18px;'>
+        MarketRanger es una plataforma que te conecta con tus clientes<br><br>
+        Solo ingresa tu ID de MercadoLibre y selecciona el producto que quieres promocionar y nuestros <i>rangers</i> se encargan del resto
+      </div>
+      <div style = 'width:600px; height: 80px; position: relative; margin: 0px auto;'>
+        <img src = 'robosend.png' id = 'movil' style = 'height: 80px; position: absolute;left: 0;' />
+      </div>
+    </div>
+    <script>
+      $(function(){
+        $("#movil").animate({left: "100%"},20000);
+      });
+    </script>
+  {{/main}}
+</template>

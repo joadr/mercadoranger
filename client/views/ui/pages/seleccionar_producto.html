@@ -1,0 +1,26 @@
+<template name='seleccionar_producto'>
+  {{#main}}
+    <div class='navbar'>
+      <img src='MARKETRlogo.png' style='height: 40px;' />
+    </div>
+    <div class='content seleccionar_producto'>
+      Elige uno de tus productos
+      <ul class='productos'>
+        {{#each productos}}
+          {{> product}}
+        {{/each}}
+      </ul>
+    </div>
+  {{/main}}
+</template>
+
+<template name="product">
+  <li>
+    <img src='{{thumbnail}}' />
+    <div class='info'>
+        <div class='titulo'>{{title}}</div>
+        <div class='precio'>${{formatMoney price}}</div>
+    </div>
+    <img src='robosend.png' class='enviar' />
+  </li>
+</template>

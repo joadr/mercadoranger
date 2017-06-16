@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html {
+    height: 100%;
+    font-family: Roboto;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#__blaze-root {
+    height: 100%;
+}
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    height: 60px;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    z-index: 1000;
+}
+
+.content {
+    width: 100%;
+    min-height: 100%;
+    background: #4B79A1; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4B79A1 , #283E51); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4B79A1 , #283E51); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    padding-top: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.content.central {
+    text-align: center;
+    font-size: 42px;
+    padding-top: 200px;
+}
+
+.content.seleccionar_producto {
+    text-align: center;
+    font-size: 36px;
+    padding-top: 100px;
+}
+
+.content.central input {
+    width: 300px;
+    border: 2px solid rgb(220,220,220);
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background-color: white;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.productos {
+    width: 600px;
+    max-height: 400px;
+    margin: 20px auto;
+    padding: 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: white;
+}
+
+.productos li {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    box-sizing: border-box;
+    color: rgb(150,150,150);
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(200,200,200);
+}
+
+.productos li img {
+    height: 40px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.productos li .info {
+    display: inline-block;
+    height: 40px;
+    vertical-align: top;
+    margin-left: 15px;
+}
+
+.productos li .info .titulo {
+    font-size: 19px;
+    line-height: 22px;
+    max-width: 450px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.productos li .info .precio {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.productos li .enviar {
+    -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+    float: right;
+    height: 40px;
+}
+
+.productos li:hover .enviar {
+    filter: none;
+    -webkit-filter: none;
+}
+
+.robot-bar {
+    height: ~"calc(100% - 60px)";
+    background-color: white;
+    width: 400px;
+    color: rgb(100,100,100);
+    position: absolute;
+    padding: 15px;
+}
+
+.robot-stats ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.robot-stats ul li {
+    padding: 0;
+    margin: 30px 0px;
+    color: rgb(120,120,120);
+}
+
+.robot-stats ul li .key {
+    float: left;
+    text-align: left;
+}
+
+.robot-stats ul li .value {
+    text-align: right;
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.robot-actions {
+    padding-left: 14px; 
+    padding-right: 14px; 
+    margin-top: 60px;
+    text-align: center;
+}
+
+.robot-actions button {
+    border: 0;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+    outline: none;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+    width: 155px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.robot-actions button.red {
+    background-color: #CD533B;
+}
+
+.robot-actions button.blue {
+    background-color: #247BA0;
+}
+
+.robot-monitor {
+    width: ~"calc(100% - 420px)";
+    margin-left: 410px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    padding-top: 20px;
+}
+
+.robot-monitor .venta {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.robot-monitor .venta .thumb {
+    height: 60px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+.robot-monitor .venta .info {
+    height: 60px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.robot-monitor .venta .info .titulo {
+    font-size: 26px;
+}
+
+.robot-monitor .venta .info .precio {
+    font-size: 16px;
+    line-height: 27px;
+}
+
+.robot-monitor .venta .info .precio a {
+    vertical-align: text-bottom;
+    background-color: white;
+    border: 0;
+    color: #4B79A1;
+    text-transform: uppercase;
+    padding: 4px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    cursor: pointer;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.robot-monitor .realtime {
+    width: 100%;
+}
+
+.robot-monitor .realtime .twitter-feed {
+    width: 700px;
+    margin: 0px auto;
+    vertical-align: top;
+}
+
+.robot-monitor .realtime .twitter-feed .header {
+    text-align: center;
+    padding: 10px;
+}
+
+.robot-monitor .realtime .twitter-feed ul {
+    width: 80%;
+    list-style: none;
+    padding: 0;
+    margin: 0px auto;
+    background-color: white;
+    overflow-y: auto;
+    max-height: 350px;
+}
+
+.robot-monitor .realtime .twitter-feed ul li {
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgb(220,220,220);
+    box-sizing: border-box;
+    color: rgb(100,100,100);
+    font-size: 12px;
+    position: relative;
+}
+
+.robot-monitor .realtime .twitter-feed ul li .avatar {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.robot-monitor .realtime .twitter-feed ul li .tweet {
+    width: ~"calc(100% - 45px)";
+    display: inline-block;
+    vertical-align: top;
+}
+
+.robot-monitor .realtime .twitter-feed ul li.destacado {
+    background-color: rgba(255,170,0,0.35);
+}
+
+.robot-monitor .realtime .analyze-tool {
+    width: ~"calc(100% - 430px)";
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+}

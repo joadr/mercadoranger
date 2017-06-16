@@ -1,0 +1,24 @@
+{
+  "name": "nam",
+  "private": true,
+  "scripts": {
+    "start": "node main.js"
+  },
+  "engines" : {
+    "node" : "4.5"
+  },
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "bcrypt-pbkdf": "^1.0.0",
+    "ecc-jsbn": "^0.1.1",
+    "fibers": "^1.0.15",
+    "jodid25519": "^1.0.2",
+    "jsbn": "^0.1.0",
+    "mercadolibre": "^0.0.10",
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.15.1",
+    "twitter": "^1.4.0",
+    "underscore": "^1.8.3",
+    "xml2js": "^0.4.17"
+  }
+}

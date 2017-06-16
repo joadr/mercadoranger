@@ -1,0 +1,75 @@
+<template name='robot'>
+  {{#main}}
+    {{#with robot}}
+    <div class='navbar'>
+      <a href = '/'><img src='MARKETRlogo.png' style='height: 40px;' /></a>
+    </div>
+    <div class='content'>
+      <div class='robot-bar'>
+          <div style='font-size: 14px; margin-top: 10px; margin-bottom: 20px;'><a href="{{pathFor 'seleccionar-producto'}}" style='color: #314e66; text-decoration: none; font-weight: bold'>Volver a tus productos en venta</a></div>
+          <div class='info-robot' style='height: 60px; padding-left: 14px; padding-right: 14px;'>
+              <img src='ranger.png' style='height: 60px; float: left;'/>
+              <div style='float: right; text-align: right;'>
+                  <div style='font-size: 14px; color: rgb(180,180,180); padding-top: 8px;'>Ranger a cargo de la campaña</div>
+                  <div style='font-size: 33px;'>{{name}}</div>
+              </div>
+          </div>
+          <div class='robot-stats' style='padding-left: 14px; padding-right: 14px; margin-top: 60px;'>
+              <ul>
+                  <li>
+                      <div class='key'>Fecha de creación</div>
+                      <div class='value'>{{fecha}}</div>
+                      <div class='clear'></div>
+                  </li>
+                  <li>
+                      <div class='key'>Tweets Analizados</div>
+                      <div class='value'>{{scannedTweetsCount}} tweets</div>
+                      <div class='clear'></div>
+                  </li>
+                  <li>
+                      <div class='key'>Tweets Respondidos</div>
+                      <div class='value'>{{matchedTweetsCount}} tweets</div>
+                      <div class='clear'></div>
+                  </li>
+                  <li>
+                      <div class='key'>Monto pagado a la fecha</div>
+                      <div class='value'>$34.000</div>
+                      <div class='clear'></div>
+                  </li>
+              </ul>
+              <div style = 'width: 100%; text-align: center; color: rgb(120,120,120); font-size: 14px;'>
+                <b>{{name}}</b> sigue buscando los tweets y contactando a tus clientes, incluso cuando no estás conectado. Si quieres
+                detener la búsqueda, presiona el botón DETENER ROBOT. 
+              </div>
+          </div>
+          <div class='robot-actions'>
+              <button type='button' class='blue'>configuración</button>
+              <button type='button' class='red stopBot'>detener robot</button>
+          </div>
+      </div>
+      <div class='robot-monitor'>
+        <div class='venta'>
+          <img src='{{product.thumbnail}}' class='thumb' />
+          <div class='info'>
+            <div class='titulo'>{{product.title}}</div>
+            <div class='precio'>$40.000 <a target='_blank' href="{{product.permalink}}">Ver en MercadoLibre</a></div>
+          </div>
+        </div>
+        <div class='realtime'>
+          <div class='twitter-feed'>
+            <div class='header'>Tweets en vivo</div>
+            <ul>
+              {{#each scannedTweets}}
+              <li class = '{{clase}}' >
+                <img src='{{pic}}' class='avatar' />
+                <div class='tweet'><b>@{{this.name}}:</b><br>{{text}} <span style="color: rgb(255, 255, 255)">{{score}}</span></div>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/with}}
+  {{/main}}
+</template>
