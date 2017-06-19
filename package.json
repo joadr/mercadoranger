@@ -4,8 +4,8 @@
   "scripts": {
     "start": "node main.js"
   },
-  "engines" : {
-    "node" : "4.5"
+  "engines": {
+    "node": "4.5"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",

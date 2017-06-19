@@ -107,21 +107,21 @@ Meteor.methods({
             var ans = '¿Buscabas esto @' + event.user['screen_name'] + '? ¡ya lo encontraste! ' + permalink
             Robots.update(robot, {$push: {matchedTweets: {$each: [{ id: event.id_str, name: event.user['screen_name'], pic: event.user.profile_image_url_https, text: event.text, answer: ans, score: score }]}}})
             Robots.update(robot, {$push: {scannedTweets: {$each: [{ id: event.id_str, name: event.user['screen_name'], pic: event.user.profile_image_url_https, text: event.text, destacado: true, score: score }]}}})
-            // Reply Tweet
-            client.post('statuses/update', {status: ans, in_reply_to_status_id: event.id}, function (error, tweet, response) {
-              if (error) {
-                console.log('error')
-              }
-              console.log(tweet)  // Tweet body.
-              console.log(response)  // Raw response object.
-            })
+            console.log({ id: event.id_str, name: event.user['screen_name'], pic: event.user.profile_image_url_https, text: event.text, answer: ans, score: score })
+            // // Reply Tweet
+            // client.post('statuses/update', {status: ans, in_reply_to_status_id: event.id}, function (error, tweet, response) {
+            //   if (error) {
+            //     console.log('error')
+            //   }
+            //   console.log(tweet)  // Tweet body.
+            //   console.log(response)  // Raw response object.
+            // })
           }).run()
         } else {
           Fiber(function () {
             Robots.update(robot, {$push: {scannedTweets: {$each: [{ id: event.id_str, name: event.user['screen_name'], pic: event.user.profile_image_url_https, text: event.text, destacado: false, score: score }]}}})
           }).run()
-            
-          }
+        }
       })
 
       stream.on('error', function (error) {
